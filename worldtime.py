@@ -1,8 +1,9 @@
 from CONSTANTS import ENDPOINT
+from timeinfo import TimeInfo
+# External libraries
 import requests
 import unidecode
 from countryinfo import CountryInfo
-from timeinfo import TimeInfo
 
 class WorldTime():
     """ To avoid abusing the rate of worldtimeAPI, this class limits the number
@@ -14,7 +15,7 @@ class WorldTime():
         # self.regions = set(map(splitting, self.request))
 
     def find_by_name(self, name: str) -> set:
-        """ Returns a list of strings for all locations existent with that name. """
+        """ Returns a list of strings for all locations with that name. """
         name = name.title()
         name = unidecode.unidecode(name).replace(' ', '_')
         return [location for location in self.locations if name in location]
@@ -67,8 +68,8 @@ class WorldTime():
             return ''
 
 
-    def get_location(self, location: str) -> str:
-        "Takes a location and returns a location object."
+    def get_location(self, location: str) -> object:
+        "Takes a location and returns a TimeInfo object."
         if location not in self.locations:
             raise ValueError('Invalid location. For valid locations look at the locations attribute.')
         else:
@@ -76,7 +77,6 @@ class WorldTime():
 
     def refresh(self):
         self.locations = requests.get(ENDPOINT).json()
-
 
 
 if __name__ == '__main__':

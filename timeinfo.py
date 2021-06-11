@@ -3,7 +3,7 @@ import requests as r
 import datetime
 
 class TimeInfo():
-    def __init__(self, location):
+    def __init__(self, location, ip=False):
         self.result = r.get(ENDPOINT + location).json()
 
         self.week_day = self.result['day_of_week']
