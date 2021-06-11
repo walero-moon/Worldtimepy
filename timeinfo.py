@@ -3,7 +3,7 @@ import requests as r
 import datetime
 
 class TimeInfo():
-    def __init__(self, to_get=0, ip=False):
+    def __init__(self, to_get=0, ip: bool=False):
         if ip:
             if to_get == 0:
                 self.result = r.get(IP_ENDPOINT).json()
