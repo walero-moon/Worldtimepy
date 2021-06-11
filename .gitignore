@@ -1,2 +1,10 @@
 pycache
 __pycache__
+tests
+__pycache__/
+dist
+dist/
+build
+build/
+pyproject.toml
+setup.py

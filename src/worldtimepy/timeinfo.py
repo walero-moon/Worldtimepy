@@ -1,4 +1,4 @@
-from CONSTANTS import ENDPOINT, IP_ENDPOINT
+from .CONSTANTS import ENDPOINT, IP_ENDPOINT
 import requests as r
 import datetime
 

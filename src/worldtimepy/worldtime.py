@@ -1,5 +1,5 @@
-from CONSTANTS import ENDPOINT
-from timeinfo import TimeInfo
+from .CONSTANTS import ENDPOINT
+from .timeinfo import TimeInfo
 # External libraries
 import requests
 import unidecode
