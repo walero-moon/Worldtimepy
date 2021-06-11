@@ -2,7 +2,7 @@
 ###### v0.1.1
 Worldtime-py is a Python wrapper for **![WorldtimeAPI](http://worldtimeapi.org/)**. It is able to search through the endpoints of the API to find the closest location if the exact one could not be found. It reduces the strain and the difficulty of getting the time for the location desired.
 
-**![WorldtimeAPI](http://worldtimeapi.org/)** is a JSON API for obtaining the current time in, and related data about, a timezone. It gives data suh as the UTC offset, whether that timezone is in Daylight Savings Time (DST), **![UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time)** offset, etc.
+**![WorldtimeAPI](http://worldtimeapi.org/)** is a JSON API for obtaining the current time in, and related data about, a timezone. It gives data such as the UTC offset, whether that timezone is in Daylight Savings Time (DST), **![UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time)** offset, etc.
 
 
 ## Installing
