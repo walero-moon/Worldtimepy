@@ -17,6 +17,13 @@ This is the main class through which you should interact with the API.
 *return* **list**
 <br>
 
+##### _**`.from_ip(ip: str='') -> TimeInfo` optional argument: ip**_
+
+> Takes an IP and returns a corresponding TimeInfo object with timezone information for that IP. If no IP is provided, it will use the requesting IP.
+
+*return* **TimeInfo**
+<br>
+
 ##### _**`.find_by_name(name: str) -> list`**_
 
 > Takes a string and returns a list of strings for all locations that contain that name.
@@ -27,6 +34,8 @@ This is the main class through which you should interact with the API.
 ##### _**`.search(name: str) -> str`**_
 
 > Takes a country name or a city name and tries to find it in the database. It returns a string that can be used by `get_location()`.
+
+Warning: This function iterates through different databases to try and locate the query. It may be slow.
 
 *return* **string**
 <br>
@@ -45,9 +54,11 @@ This is the main class through which you should interact with the API.
 *No return*
 <br>
 
-### *class* **timeinfo.TimeInfo(location: str)**
+### *class* **timeinfo.TimeInfo(to_get=0, ip: bool=False)**
 This class takes a location found through one of the other methods and makes an object with information for that timezone.
 You can use any location from *worldtime.WorldTime().locations* here.
+
+Alternatively, if you set *ip* to True, you may provide an IPv4 address on *to_get* to get time information for that IP. If ip is set to True and nothing is given to *to_get*, the machine's IP will be used.
 
 Printing or turning this object into a string returns a prettier string containing time information.
 ```bash
