@@ -1,10 +1,16 @@
-from CONSTANTS import ENDPOINT
+from CONSTANTS import ENDPOINT, IP_ENDPOINT
 import requests as r
 import datetime
 
 class TimeInfo():
-    def __init__(self, location, ip=False):
-        self.result = r.get(ENDPOINT + location).json()
+    def __init__(self, to_get=0, ip=False):
+        if ip:
+            if to_get == 0:
+                self.result = r.get(IP_ENDPOINT).json()
+            else:
+                self.result = r.get(IP_ENDPOINT + to_get).json()
+        else:
+            self.result = r.get(ENDPOINT + to_get).json()
 
         self.week_day = self.result['day_of_week']
         self.year_day = self.result['day_of_year']

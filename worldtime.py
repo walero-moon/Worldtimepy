@@ -13,6 +13,18 @@ class WorldTime():
     def __init__(self):
         self.locations = requests.get(ENDPOINT).json()
         # self.regions = set(map(splitting, self.request))
+    
+    def from_ip(self, ip: str=''):
+        """"""
+        if ip == '':
+            return TimeInfo(ip=True)
+        try:
+            new_ip = ip.split('.')
+            for i in new_ip:
+                int(i)
+        except ValueError:
+            raise TypeError('Invalid IP entered. Please ensure it is a valid IPv4 address')
+        return TimeInfo(to_get=ip, ip=True)
 
     def find_by_name(self, name: str) -> set:
         """ Returns a list of strings for all locations with that name. """
@@ -81,9 +93,10 @@ class WorldTime():
 
 if __name__ == '__main__':
     worldtime = WorldTime()
-    time = worldtime.find_by_name('Bahia')
-    print(worldtime.search('São Paulo'))
-    worldtime.get_closest(['America/Bahia', 'America/Bahia_drogas'], 'Bahia')
+    print(worldtime.from_ip('8.8.8.8'))
+    # time = worldtime.find_by_name('Bahia')
+    # print(worldtime.search('São Paulo'))
+    # worldtime.get_closest(['America/Bahia', 'America/Bahia_drogas'], 'Bahia')
     # print(worldtime.get_location(time[0]))
     # print(worldtime.search('Brasil'))
     # print('Bahia' in 'America/Bahia')
