@@ -7,4 +7,3 @@ dist/
 build
 build/
 pyproject.toml
-setup.py
