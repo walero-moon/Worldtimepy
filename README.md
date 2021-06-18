@@ -11,6 +11,11 @@ This library can be installed by using `pip install worldtimepy`. Doing so will 
 This library requires you to have ![requests](https://docs.python-requests.org/en/master/), ![unidecode](https://pypi.org/project/Unidecode/), and ![countryinfo](https://pypi.org/project/countryinfo/). All of those can be installed using `pip`.
 
 ## Using the wrapper
+Import  the modules first
+
+`from worldtimepy import worldtime`
+
+`from worldtimepy import timeinfo` Use this only if you desire to handle the endpoints yourself
 ### *class* **worldtime.WorldTime()**
 This is the main class through which you should interact with the API.
 
